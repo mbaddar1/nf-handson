@@ -1,5 +1,8 @@
 """
+
 NF
+Proof
+http://homepage.divms.uiowa.edu/~rdecook/stat2020/notes/Transformations_rv_continuous_pt2.pdf (p5,6)
 https://akosiorek.github.io/ml/2018/04/03/norm_flows.html
 https://pyro.ai/examples/normalizing_flows_i.html#Background
 https://blog.evjang.com/2018/01/nf1.html
