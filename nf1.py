@@ -1,8 +1,12 @@
 """
 
-NF
-Proof
+NF Math Proof
 http://homepage.divms.uiowa.edu/~rdecook/stat2020/notes/Transformations_rv_continuous_pt2.pdf (p5,6)
+https://59clc.files.wordpress.com/2011/01/real-and-complex-analysis.pdf  (p 150)
+https://drive.google.com/file/d/1ig4oertmWfwT7QtcURl4QY5gCZ69EPIj/view?usp=sharing
+https://www.hugendubel.de/de/ebook_pdf/vladimir_i_bogachev-measure_theory-11429515-produkt-details.html (3.7 p194)
+https://drive.google.com/file/d/1K8Bk14WuuA8kpYrkXQIntmdBC65alWdl/view?usp=sharing
+NF Overview
 https://akosiorek.github.io/ml/2018/04/03/norm_flows.html
 https://pyro.ai/examples/normalizing_flows_i.html#Background
 https://blog.evjang.com/2018/01/nf1.html
