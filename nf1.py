@@ -1,11 +1,19 @@
 """
-
 NF Math Proof
+mit-math-notes
+https://math.mit.edu/~larsh/teaching/F2007/handouts/changeofvariables.pdf
+https://drive.google.com/file/d/1r6gt5nFFXVxIdStJChk1YP-ZgDLeiyzm/view?usp=sharing
+
+http://www.ams.sunysb.edu/~zhu/ams570/Lecture5_570.pdf
 http://homepage.divms.uiowa.edu/~rdecook/stat2020/notes/Transformations_rv_continuous_pt2.pdf (p5,6)
-https://59clc.files.wordpress.com/2011/01/real-and-complex-analysis.pdf  (p 150)
-https://drive.google.com/file/d/1ig4oertmWfwT7QtcURl4QY5gCZ69EPIj/view?usp=sharing
+Bogachev. Measure Theory
 https://www.hugendubel.de/de/ebook_pdf/vladimir_i_bogachev-measure_theory-11429515-produkt-details.html (3.7 p194)
 https://drive.google.com/file/d/1K8Bk14WuuA8kpYrkXQIntmdBC65alWdl/view?usp=sharing
+Walter Rudin. Real and complex analysis.
+https://59clc.files.wordpress.com/2011/01/real-and-complex-analysis.pdf  (p 150)
+https://drive.google.com/file/d/1ig4oertmWfwT7QtcURl4QY5gCZ69EPIj/view?usp=sharing
+
+
 NF Overview
 https://akosiorek.github.io/ml/2018/04/03/norm_flows.html
 https://pyro.ai/examples/normalizing_flows_i.html#Background
@@ -77,7 +85,7 @@ sns.distplot(X[:, 1], hist=False, kde=True,
              kde_kws={'linewidth': 2})
 plt.title(r'$p(x_2)$')
 plt.show()
-#learning part
+# learning part
 base_dist = dist.Normal(torch.zeros(2), torch.ones(2))
 spline_transform = T.Spline(2, count_bins=16)
 flow_dist = dist.TransformedDistribution(base_dist, [spline_transform])
@@ -97,36 +105,36 @@ for step in range(steps):
         print('step: {}, loss: {}'.format(step, loss.item()))
 
 # Plot after training
-X_flow = flow_dist.sample(torch.Size([1000,])).detach().numpy()
+X_flow = flow_dist.sample(torch.Size([1000, ])).detach().numpy()
 plt.title(r'Joint Distribution')
 plt.xlabel(r'$x_1$')
 plt.ylabel(r'$x_2$')
-plt.scatter(X[:,0], X[:,1], label='data', alpha=0.5)
-plt.scatter(X_flow[:,0], X_flow[:,1], color='firebrick', label='flow', alpha=0.5)
+plt.scatter(X[:, 0], X[:, 1], label='data', alpha=0.5)
+plt.scatter(X_flow[:, 0], X_flow[:, 1], color='firebrick', label='flow', alpha=0.5)
 plt.legend()
 plt.show()
 
 plt.subplot(1, 2, 1)
-sns.distplot(X[:,0], hist=False, kde=True,
+sns.distplot(X[:, 0], hist=False, kde=True,
              bins=None,
-             hist_kws={'edgecolor':'black'},
+             hist_kws={'edgecolor': 'black'},
              kde_kws={'linewidth': 2},
              label='data')
-sns.distplot(X_flow[:,0], hist=False, kde=True,
+sns.distplot(X_flow[:, 0], hist=False, kde=True,
              bins=None, color='firebrick',
-             hist_kws={'edgecolor':'black'},
+             hist_kws={'edgecolor': 'black'},
              kde_kws={'linewidth': 2},
              label='flow')
 plt.title(r'$p(x_1)$')
 plt.subplot(1, 2, 2)
-sns.distplot(X[:,1], hist=False, kde=True,
+sns.distplot(X[:, 1], hist=False, kde=True,
              bins=None,
-             hist_kws={'edgecolor':'black'},
+             hist_kws={'edgecolor': 'black'},
              kde_kws={'linewidth': 2},
              label='data')
-sns.distplot(X_flow[:,1], hist=False, kde=True,
+sns.distplot(X_flow[:, 1], hist=False, kde=True,
              bins=None, color='firebrick',
-             hist_kws={'edgecolor':'black'},
+             hist_kws={'edgecolor': 'black'},
              kde_kws={'linewidth': 2},
              label='flow')
 plt.title(r'$p(x_2)$')
